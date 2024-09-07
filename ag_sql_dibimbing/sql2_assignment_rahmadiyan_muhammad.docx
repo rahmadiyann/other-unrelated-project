@@ -1,0 +1,40 @@
+Nama lengkap: Rahmadiyan Muhammad
+
+-- case 1 (normalisasi tabel ini ke 3NF)
+Student_Grade_Report (
+    StudentNo, 
+    StudentName, 
+    Major, 
+    CourseNo, 
+    CourseName, 
+    InstructorNo, 
+    InstructorName, 
+    InstructorLocation, 
+    Grade) 
+
+(PETUNJUK: dalam 3NF, akan ada 4 tabel)
+Student (
+    StudentNo, PK
+    StudentName, 
+    Major
+)
+
+Course (
+    CourseNo, PK
+    CourseName
+)
+
+Instructor (
+    InstructorNo, PK
+    InstructorName, 
+    InstructorLocation
+)
+
+Student_Grade (
+    StudentNo, FK Student(StudentNo)
+    CourseNo, FK Course(CourseNo)
+    InstructorNo, FK Instructor(InstructorNo)
+    Grade
+)
+
+-- case 2 ( ERD tabel yang sudah dinormalisasi )
