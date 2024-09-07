@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> LILYYYCATSSS✨💗 </title>
+    <style>
+        body {
+            background-image: url(https://c.tenor.com/i1rsgMyOFgcAAAAd/cat-cat-love.gif);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        p {
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <!-- Content will be dynamically added here -->
+    </div>
+
+    <script>
+        const messages = [
+            { img: "https://c.tenor.com/3RkBSAwE4xgAAAAj/quby-pentol.gif", text: "I've been missing you and wanted to say hi." },
+            { img: "https://c.tenor.com/ux7RPst0v1MAAAAj/quby-pentol.gif", text: "I hope you're doing fine" },
+            { img: "https://c.tenor.com/Fm3_oNnjUjYAAAAj/line.gif", text: "If you're having a hard time, and if you need someone to talk to, I'm one message away." },
+            { img: "https://c.tenor.com/1UoL-HJFGDAAAAAj/pentol-stiker-pentol.gif", text: "Good luck in everything you're doing, and don't forget to always believe in yourself!" },
+            { img: "https://c.tenor.com/1bN1lZmbwWcAAAAj/line.gif", text: "I know you have the ability to do any kind of work whether it is easy or tough" },
+            { img: "https://c.tenor.com/mJ7Tkj3KIn0AAAAj/peach-and.gif", text: "and also be confident of who you are." },
+            { img: "https://c.tenor.com/CdliypdvLTEAAAAj/quby-pentol.gif", text: "whatever it is I'm proud of you!" },
+            { img: "https://c.tenor.com/tsniEXs1tFkAAAAj/fbcuteboy.gif", text: "I know most of what I'm saying doesn't make sense but, you get the point." },
+            { img: "https://c.tenor.com/LxggFGxwOjIAAAAj/shy-cat.gif", text: ":*" }
+        ];
+
+        let currentIndex = 0;
+
+        function showContent(index) {
+            if (index < messages.length) {
+                const content = document.getElementById('content');
+                content.innerHTML = ''; // Clear previous content
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = messages[index].img;
+                const pElement = document.createElement('p');
+                pElement.textContent = messages[index].text;
+                
+                content.appendChild(imgElement);
+                content.appendChild(pElement);
+                
+                currentIndex = index;
+                
+                // Schedule the next message after 2 seconds
+                setTimeout(() => showContent(index + 1), 3000);
+            }
+        }
+        
+        // Wait for the page to load before starting to show messages
+        window.onload = function() {
+            // Start showing messages
+            showContent(0);
+        };
+    </script>
+</body>
+</html>
