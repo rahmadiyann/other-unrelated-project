@@ -1,78 +1,123 @@
-![Project Logo](https://manggalla.com/beta/wp-content/uploads/2023/02/Logo-SMR-1.png)
-# WPAutomate
+# Jobdesc Operation and Supply Chain Intern
 
-WPAutomate is a collection of scripts designed to automate SMR's OSC Intern Jobs. This repository contains scripts for environment setup, main application logic, and specific automated tasks such as handling depot operations, managing new customers, and processing pre-orders.
+![Sarwa](https://manggalla.com/beta/wp-content/uploads/2023/02/Logo-SMR-1.png)
 
-## Scripts
+## Tugas Utama:
 
-### Environment Setup
-- `env/env.py`: Manages environment variables and configurations for the automation scripts.
+Berurutan mulai dari pagi - sore. Silahkan diatur sesuai kebutuhan
 
-### Main Application
-- `main.py`: Serves as the entry point for executing the automated tasks defined in the scripts.
+1. Pisahkan dokumen balikan hari sebelumnya per segmen market dan digitalisasi/filing dokumen balikan.
+   
+2. Sales Order(SO) masuk dari Sales & Marketing (SM):
+   - Input (SO) di [Wordpress Preorder](https://manggalla.com/sarwa/pesanan/)
+   - SO SF: Pisahkan lembar hijau dari SO besar dan faktur, lalu input di wordpress preorder untuk SO besar dan [Wordpress Wellness Administrasi](https://manggalla.com/wellness/administrasi/) untuk faktur.
+     - Berikan SO besar ke Finance, Accounting, and Tax(FAT) (Bu Hotma) untuk FAT check.
+     - Setelah FAT check di ACC, info ke Pak Dany atau Pak Rafli untuk dibuatkan Surat Jalan (SJ).
+     - Cap TTD dan Logo SMR di tiap lembar SJ.
+     - TTD Apoteker Penanggung Jawab (APJ).
+     - Turunin SJ ke gudang untuk dikirim.
+     - Validasi preorder di [Wordpress Validasi Pesanan](https://manggalla.com/sarwa/validasi-pesanan/).
+   - SO SD & GB-SD: Input di wordpress preorder.
+     - FAT check ke Bu Hotma.
+     - Apabila SO dikembalikan, SIMPAN sampai diminta lagi.
+     - Info print SJ.
+     - Cap TTD dan Logo SMR.
+     - TTD APJ.
+     - Turunkan ke gudang untuk dikirim.
+     - Validasi di Wordpress Validasi Pesanan.
+   - SO SM, MR, MS, DIY: Input di wordpress preorder.
+     - FAT check ke Bu Atika.
+     - Info print SJ.
+     - Cap TTD dan Logo SMR.
+     - Untuk DIY, cabut lembar Purchase Order(PO) dari SO dan straple ke SJ.
+     - TTD APJ.
+     - Turunkan ke gudang untuk dikirim.
+     - Validasi di Wordpress Validasi Pesanan. (PASTIKAN MR, DIY dibuat invoicenya oleh FAT)
+   - SO MT: Input di wordpress preorder.
+     - FAT check ke Pak Geren.
+     - Perhatikan mana SO yang di ACC, bisa di cek di [Logbook](https://docs.google.com/spreadsheets/d/1pcjYibnJNEp1jow9mpJSb63-fyGkOAodVwL1WblVtpM/edit#gid=642080019).
+     - Info print SJ untuk SO yang di ACC.
+     - Gabungkan lembar PO dan SJ, untuk beberapa customer tertentu diperlukan invoice.
+     - Berikan SJ dan SO ke FAT untuk dibuatkan invoice. [List customer](#list-customer-mt-yang-memerlukan-invoice)
+     - Cap TTD dan Logo SMR di tiap lembar SJ dan SO.
+     - Turunkan ke bawah untuk dikirim.
+     - Validasi di Wordpress Validasi Pesanan.
+   - SO SF Cirebon & Bandung (SF/CRB & SF/BDG): Sama seperti SO SF, namun FAT check ke Bu Atika.
 
-### Dependencies
-- `requirements.txt`: Contains all the necessary Python packages required to run the scripts.
+3. Input surat jalan lembar kuning ke [Outbound](https://manggalla.com/sarwa/outbound/)
+    - Satu batch no satu inputan
+    - SJ time hari itu jam 9
+    - Invoice time hari itu jam 9.30
+    - No plat nomor, tergantung driver. Lihat ke [Nama dan Plat Nomor Driver](#nama-dan-plat-nomor-driver)
 
-### Automated Tasks
-- `scripts/balikandepo.py`: Handles the documents associated with depo and have it ready to paste into excel.
-- `scripts/balikanidm.py`: Handles the documents associated with IDM and have it ready to paste into excel.
-- `scripts/balikansat.py`: Handles the documents associated with SAT and have it ready to paste into excel.
-- `scripts/balikansd.py`: Handles the documents associated with SD and have it ready to paste into excel.
-- `scripts/balikansf.py`: Handles the documents associated with SF and have it ready to paste into excel.
-- `scripts/monitor.py`: Monitors the status and health of various automated processes.
-    #### Might need to register number through Twilio Sandbox. Send "join people-does" to +1 415 523-8886 or click [this link](https://wa.me/14155238886?text=join%20people-does)
-- `scripts/preorder.py`: Manages the pre-ordering data, from cleaning, filtering, sorting, to generating the SQL query.
-    #### If customer name isn't registered on the customer_names.json, it will prompt for the corresponding customer information.
-- `scripts/validate.py`: Manual FAT Validates.
+4. Print Laporan Harian Driver.
+[Link Document Manual](https://docs.google.com/document/d/1ZoA9T7PFwKXfAMxYduhBhbF7nA1RbRKW/edit?usp=sharing&ouid=111421654737140850251&rtpof=true&sd=true)
 
-## Installation
+## Panduan Filing/Digitalisasi Dokumen Balikan:
 
-To install the required dependencies for WPAutomate, run the following command on terminal / command prompts:
+### SD, SF JKT, GB-SD:
+- Ketik di excel.
+- Print table excel.
+- Berikan semua dokumen ke FAT (Bu Hotma).
+- TTD penerimaan dokumen balikan.
 
-```bash
-#For MacOS / Linux
-python3 -m venv ./venv
-#Activating virtual environment
-source .venv/bin/activate
+### SF BDG/CRB, MR, DIY:
+- Ketik di excel.
+- Input invoice time bila ada.
+- Print table excel.
+- Berikan semua dokumen ke FAT (Bu Atika).
+- TTD penerimaan dokumen balikan.
 
-#For Windows
-python -m .venv/Scripts/Activate
-#Activating virtual environment
-./venv/bin/activate
-```
+### MT:
+- Ketik di excel.
+- Print table excel.
+- Berikan semua dokumen ke FAT (Pak Geren) atau FAT intern.
+- TTD penerimaan dokumen balikan.
 
-To deactivate virtual environment, simply run the following command:
-```bash
-deactivate
-```
+## Automasi
 
-Installing dependencies
+Sangat disarankan menggunakan otomisasi input preorder, validasi, dan balikan dokumen.
+Refer ke [WPAutomate](https://github.com/rianying/WPAutomate)
 
-```bash
-#For MacOS / Linux
-pip3 install -r requirements.txt
+## Panduan Pengembalian Dokumen SO:
 
-#For Windows
-pip install -r requirements.txt
-```
+1. Urutkan file yang terbesar sampai terkecil berdasarkan nomor SO.
 
-## Usage
+2. Pisahkan SO berdasarkan warna lembar:
+   - Slip Putih = FAT
+   - Slip Merah = S&M
+   - Slip Kuning = OSC
+   - Slip Hijau = OSJ
 
-To use the automation scripts, set up the necessary environment variables in `env/env.py` and execute `main.py`
+## List Customer MT yang memerlukan invoice:
+- PT. Gogobli (Term Payment: COD)
+- Masiva Guna
+- Manna Manca
+- Sumber Hidup Sehat/Vivahealth
+- Ka Dua Empat
+- Anugrah Argon Medica
+- CV Kreasi Sukses Makmur
+- PT. Teknologi Medika Pratama
+- PT. Era Caring
+- Kimia Farma
 
-```bash
-python main.py
-```
+## Jam-jam penting:
+- Jam 11.00: Pengiriman pagi untuk SF dan MT dalam kota. Biasanya PO dari PT. Sumber Alfaria Trijaya (SAT) datang dan akan dikirim di jam 11.00 di hari yang sama.
+- Jam 15.00: Penjemputan barang untuk PO dari PT. Inti Cakrawala Citra (IDG), PT. Inti Cakrawala Maju (ICM) dan PT. Indomarco Prismatama (IDM). Biasanya PO datang dan akan dikirimkan di jam 15.00 di hari yang sama.
+- Jam 17.00: Pengiriman sore untuk SF BDG, SF CRB, dan beberapa SD dan DIY luar kota.
 
-## Contributing
+## Panduan Laporan Harian Driver:
+- Halaman Laporan Driver dapat dilihat di [sini](https://manggalla.com/sarwa/laporan-biaya-pengiriman-2/).
+- Double check data yang sudah di input driver di [WP Admin Cost Delivery](https://manggalla.com/sarwa/wp-admin/admin.php?page=tabulate&controller=table&table=cost_delivery) dan pastikan SJ sudah masuk di WP Admin Outbound.
+- Apabila semua laporan sudah sesuai, print laporan di halaman laporan driver.
+- TTD laporan driver.
 
-Contributions to WPAutomate are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+## Nama dan Plat Nomor Driver
+- Eko         : B 9728
+- Bayu        : B 5467
+- Mauto       : B 9729
+- Retza       : B 4010
+- Bambang     : B 9018
+- Esa         : B 9793
 
-## Author
-
-`Rahmadiyan Muhammad`
-
-- Porto: [https://rian.social
-- Medium: [https://medium.com/@rianying
-- Linkedin: [https://www.linkedin.com/in/rahmadiyanmuhammad/
+Kemungkinan driver bertukar kendaraan. Pastikan ulang dan cek dari Grup WA Ekspedisi SMR
