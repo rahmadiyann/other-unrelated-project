@@ -1,14 +1,14 @@
 Dear all,
 Berikut update status job priority airflow
-*7/Sep/2024* - *00:00*
+*8/Okt/2024* - *23:00*
 
 1.cbs_tradefinance_to_landing
-22:30 - 22:48
+22:30 - 22:50
 *DONE*
 
 2.cbs_loaniq_to_landing
-23:00 - 23:17
-*DONE*
+23:00 -
+*RUNNING*
 
 3.dag_cbs_ism_gbr
 23:00 -
@@ -16,27 +16,27 @@ Berikut update status job priority airflow
 
 4.cms_cccore_to_datalake
 00:00 -
-*RUNNING*
+*WAITING*
 
 5.dag_wms_crn_level
 00:00 -
-*RUNNING*
+*WAITING*
 
 6.equation_batch_btpmis
 00:00 -
-*RUNNING*
+*WAITING*
 
 7.equation_ymis_to_datalake
 00:00 -
-*RUNNING*
+*WAITING*
 
 8.ods_cms_data_metric
 00:00 -
-*RUNNING*
+*WAITING*
 
 9.wms_data_metric
 00:00 -
-*RUNNING*
+*WAITING*
 
 10.customer_golden_data_metric_rev
 00:30 -
